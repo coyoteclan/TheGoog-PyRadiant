@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pytest tests/ -v --tb=short)",
+      "Bash(python:*)",
+      "Bash(git clone:*)",
+      "Bash(find:*)",
+      "Bash(mkdir:*)",
+      "Bash(cat:*)",
+      "Bash(wc:*)"
+    ]
+  }
+}

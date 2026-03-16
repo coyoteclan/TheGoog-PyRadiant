@@ -1,0 +1,50 @@
+#name "xanim"
+#dll "xanim"
+#target_dir "xanim/"
+#file_ext "*"
+
+string filename
+string model
+int 0 0 1 looping
+enum {"delta", "relative", "absolute", "mp_torso", "mp_legs", "mp_fullbody"} type
+int 1 0 1 useBones
+string node
+float .05 0 180 angleError
+float .025 0 1000 translationError
+
+string boneStabilizers
+
+vcontainer
+{
+	fileedit(filename)
+	[
+		exec
+		{
+			reldir("xanim_export/")
+		}		
+	]
+
+	fileedit(model)
+	[
+		exec
+		{
+			reldir("model_export/")
+		}		
+	]
+
+	checkbox(looping)
+	checkbox(useBones)
+	scrollbox(type)
+	edit(node)
+	floatedit(angleError, .05, 1)
+	floatedit(translationError, .025, .1)
+
+	multiedit(boneStabilizers)
+	[
+		exec
+		{
+			width(640)
+			height(80)
+		}
+	]	
+}

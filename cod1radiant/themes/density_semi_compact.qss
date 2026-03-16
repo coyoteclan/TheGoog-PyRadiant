@@ -1,0 +1,74 @@
+/* Semi-Compact mode - moderately reduced spacing */
+
+QMenuBar {
+    padding: 2px;
+}
+QMenuBar::item {
+    padding: 3px 7px;
+}
+QMenu::item {
+    padding: 5px 20px 5px 20px;
+}
+QToolBar {
+    spacing: 2px;
+    padding: 2px;
+}
+QToolBar::separator {
+    margin: 3px 5px;
+}
+QToolButton {
+    padding: 3px 6px;
+}
+QDockWidget::title {
+    padding: 5px;
+}
+QGroupBox {
+    margin-top: 7px;
+    padding-top: 7px;
+}
+QGroupBox::title {
+    padding: 0 3px;
+}
+QPushButton {
+    padding: 5px 12px;
+}
+QLineEdit, QSpinBox, QDoubleSpinBox, QComboBox {
+    padding: 3px;
+}
+QCheckBox {
+    spacing: 5px;
+}
+QCheckBox::indicator {
+    width: 15px;
+    height: 15px;
+}
+QTabBar::tab {
+    padding: 5px 12px;
+}
+QScrollBar:vertical {
+    width: 11px;
+}
+QScrollBar::handle:vertical {
+    min-height: 18px;
+}
+QScrollBar:horizontal {
+    height: 11px;
+}
+QScrollBar::handle:horizontal {
+    min-width: 18px;
+}
+QTableWidget::item {
+    padding: 3px;
+}
+QHeaderView::section {
+    padding: 5px;
+}
+QListWidget::item {
+    padding: 3px;
+}
+QTreeWidget::item {
+    padding: 3px;
+}
+QTreeWidget QHeaderView::section {
+    padding: 3px;
+}

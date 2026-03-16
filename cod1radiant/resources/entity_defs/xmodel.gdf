@@ -1,0 +1,259 @@
+#name "xmodel"
+#dll "xmodel"
+#target_dir "xmodel/"
+#target_dir "skins/"
+#target_dir "xmodelparts/"
+#target_dir "xmodelsurfs/"
+#file_ext "*;*.dds;*.tga;*.jpg"
+
+enum { "rigid", "animated", "viewmodel", "multiplayer body", "viewhands" } type
+string highLodRigidRoot
+string filename
+float 0 0 1000000 highLodDist
+int 0 0 1 forceMediumLodRigid
+string mediumLodRigidRoot
+string mediumLod
+float 0 0 1000000 mediumLodDist
+int 0 0 1 forceLowLodRigid
+string lowLodRigidRoot
+string lowLod
+float 0 0 1000000 lowLodDist
+
+int 1 0 1 calculateBounds
+float 0 -1000000 1000000 minX
+float 0 -1000000 1000000 minY
+float 0 -1000000 1000000 minZ
+float 0 -1000000 1000000 maxX
+float 0 -1000000 1000000 maxY
+float 0 -1000000 1000000 maxZ
+
+int 0 0 1 noRadialNormals
+float 0 -1000000 1000000 radialOriginX
+float 0 -1000000 1000000 radialOriginY
+float 0 -1000000 1000000 radialOriginZ
+
+enum { "None", "High", "Medium", "Low" } collisionLOD
+
+string hitBoxModel
+string skinOverride
+string boneControllers
+string boneStabilizers
+
+
+vcontainer
+{
+	hcontainer
+	{
+		scrollbox(type)
+		[
+			exec
+			{
+				width(320)
+			}
+		]
+
+		edit(highLodRigidRoot)
+		[
+			exec
+			{
+				labelwidth(160)
+			}
+		]
+	}
+
+	fileedit(filename)
+	[
+		exec
+		{
+			reldir("model_export/")
+		}
+	]
+
+	floatedit(highLodDist, 1, 10)
+
+	hcontainer
+	{
+		checkbox(forceMediumLodRigid)
+		[
+			exec
+			{
+				labelwidth(160)
+			}
+		]
+
+		edit(mediumLodRigidRoot)
+		[
+			exec
+			{
+				labelwidth(160)
+			}
+		]
+	}
+
+	fileedit(mediumLod)
+	[
+		exec
+		{
+			reldir("model_export/")
+		}
+	]
+
+	floatedit(mediumLodDist, 1, 10)
+
+	hcontainer
+	{
+		checkbox(forceLowLodRigid)
+		[
+			exec
+			{
+				labelwidth(160)
+			}
+		]
+
+		edit(lowLodRigidRoot)
+		[
+			exec
+			{
+				labelwidth(160)
+			}
+		]
+	}
+
+	fileedit(lowLod)
+	[
+		exec
+		{
+			reldir("model_export/")
+		}
+	]
+
+	floatedit(lowLodDist, 1, 10)
+
+	scrollbox(collisionLOD)
+
+	vcontainer
+	{
+		checkbox(calculateBounds)
+		hcontainer
+		{
+			floatedit(minX, 1, 10)
+			[
+				exec
+				{
+					width(140)
+					labelwidth(50)
+				}
+			]
+			floatedit(minY, 1, 10)
+			[
+				exec
+				{
+					width(140)
+					labelwidth(50)
+				}
+			]
+			floatedit(minZ, 1, 10)
+			[
+				exec
+				{
+					width(140)
+					labelwidth(50)
+				}
+			]
+		}
+		hcontainer
+		{
+			floatedit(maxX, 1, 10)
+			[
+				exec
+				{
+					width(140)
+					labelwidth(50)
+				}
+			]
+			floatedit(maxY, 1, 10)
+			[
+				exec
+				{
+					width(140)
+					labelwidth(50)
+				}
+			]
+			floatedit(maxZ, 1, 10)
+			[
+				exec
+				{
+					width(140)
+					labelwidth(50)
+				}
+			]
+		}
+	}
+
+	vcontainer
+	{
+		checkbox(noRadialNormals)
+		hcontainer
+		{
+			floatedit(radialOriginX, 1, 10)
+			[
+				exec
+				{
+					width(190)
+					labelwidth(100)
+				}
+			]
+			floatedit(radialOriginY, 1, 10)
+			[
+				exec
+				{
+					width(190)
+					labelwidth(100)
+				}
+			]
+			floatedit(radialOriginZ, 1, 10)
+			[
+				exec
+				{
+					width(190)
+					labelwidth(100)
+				}
+			]
+		}
+	}
+
+	fileedit(hitBoxModel)
+	[
+		exec
+		{
+			reldir("model_export/")
+		}
+	]
+
+	multiedit(skinOverride)
+	[
+		exec
+		{
+			width(640)
+			height(80)
+		}
+	]
+
+	multiedit(boneControllers)
+	[
+		exec
+		{
+			width(640)
+			height(80)
+		}
+	]
+	
+	multiedit(boneStabilizers)
+	[
+		exec
+		{
+			width(640)
+			height(80)
+		}
+	]	
+}
